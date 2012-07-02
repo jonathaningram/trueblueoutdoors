@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Tbo_Core>
+            <version>1.0.0</version>
+        </Tbo_Core>
+    </modules>
+    <global>
+        <blocks>
+            <core>
+                <rewrite>
+                    <messages>Tbo_Core_Block_Messages</messages>
+                </rewrite>
+            </core>
+        </blocks>
+    </global>
+</config>

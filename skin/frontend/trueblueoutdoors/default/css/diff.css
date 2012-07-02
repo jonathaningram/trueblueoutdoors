@@ -160,8 +160,3 @@ a.product-image img{
     padding: 0;
     max-height: 100%;
 }
-.navbar-fixed-top .brand {
-    float: left;
-    margin-left: 0;
-    font-size: 22px;
-}

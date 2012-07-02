@@ -13,15 +13,14 @@
 	<div class="span12">
 		<div class="row-fluid">
 		    <div class="span3">
-		        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links_new')->toHtml() ?>
+		        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links_left')->toHtml() ?>
 		    </div>
 		    <div class="span3">
 		        <?php echo $this->getChildHtml() ?>
 		    </div>
 		    <div class="span6">
 			    <div class="well">
-			        <p><?php echo $this->__('Based on Bootstrap, ') ?><a rel="nofollow" href="http://twitter.github.com/bootstrap/" onclick="this.target='_blank'"><strong><?php echo $this->__('from Twitter') ?></strong></a> <?php echo $this->__('(Magento ver. %s)', Mage::getVersion()) ?></p>
-			        <p><?php echo $this->getCopyright() ?> <a title="Magento Expert Online" href="http://magenthon.com">@Magenthon.com</a></p>
+			        <?php echo $this->getCopyright() ?>
 		        </div>
 		    </div>
 		</div>

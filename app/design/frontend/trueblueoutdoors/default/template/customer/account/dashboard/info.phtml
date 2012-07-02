@@ -9,37 +9,25 @@
  * @author      Vedran Subotic <vedran@magenthon.com>
  */
 ?>
-<div class="row">
-    <div class="span4 well">
-            <div class="box-title">
-                <h3><?php echo $this->__('Contact Information') ?></h3>
-                <a href="<?php echo $this->getUrl('customer/account/edit') ?>"><?php echo $this->__('Edit') ?></a>
-            </div>
-            <div class="box-content">
-                <p>
-                    <?php echo $this->htmlEscape($this->getCustomer()->getName()) ?><br />
-                    <?php echo $this->htmlEscape($this->getCustomer()->getEmail()) ?><br />
-                    <a href="<?php echo $this->getChangePasswordUrl() ?>"><?php echo $this->__('Change Password') ?></a>
-                </p>
-            </div>
+<div class="row-fluid">
+    <div class="span6 well">
+        <h3><?php echo $this->__('Contact information') ?></h3>
+        <p><a href="<?php echo $this->getUrl('customer/account/edit') ?>"><?php echo $this->__('Edit') ?></a></p>
+        <p><?php echo $this->htmlEscape($this->getCustomer()->getName()) ?><br/>
+        <a href="#"><?php echo $this->htmlEscape($this->getCustomer()->getEmail()) ?></a></p>
+        <p><a href="<?php echo $this->getChangePasswordUrl() ?>"><?php echo $this->__('Change password') ?></a></p>
     </div>
-    <?php if( $this->isNewsletterEnabled() ): ?>
-    <div class="span4 well">
-        <div class="">
-            <div class="box-title">
-                <h3><?php echo $this->__('Newsletters') ?></h3>
-                <a href="<?php echo $this->getUrl('newsletter/manage') ?>"><?php echo $this->__('Edit') ?></a>
-            </div>
-            <div class="box-content">
-                <p>
-                    <?php if( $this->getIsSubscribed() ): ?>
-                        <?php echo $this->__("You are currently subscribed to 'General Subscription'.") ?>
-                    <?php else: ?>
-                        <?php echo $this->__('You are currently not subscribed to any newsletter.') ?>
-                    <?php endif; ?>
-                </p>
-            </div>
-        </div>
+    <div class="span6 well">
+        <?php if( $this->isNewsletterEnabled() ): ?>
+        <h3><?php echo $this->__('Newsletters') ?></h3>
+        <p><a href="<?php echo $this->getUrl('newsletter/manage') ?>"><?php echo $this->__('Edit') ?></a></p>
+        <p>
+            <?php if( $this->getIsSubscribed() ): ?>
+                <?php echo $this->__("You are currently subscribed to <code>Newsletter</code>.") ?>
+            <?php else: ?>
+                <?php echo $this->__('You are currently not subscribed to any newsletter.') ?>
+            <?php endif; ?>
+        </p>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
 </div>
