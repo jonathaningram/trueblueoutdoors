@@ -1,1 +1,6 @@
 .DS_Store
+app/database.sql
+var/cache
+var/locks
+var/report
+var/session
