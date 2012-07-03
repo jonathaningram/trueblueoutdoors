@@ -19,9 +19,10 @@
 <?php $i=0; foreach($this->getSteps() as $_stepId => $_stepInfo): ?>
 <?php if (!$this->getChild($_stepId) || !$this->getChild($_stepId)->isShow()): continue; endif; $i++ ?>
     <div id="opc-<?php echo $_stepId ?>" class="section<?php echo !empty($_stepInfo['allow'])?' allow':'' ?><?php echo !empty($_stepInfo['complete'])?' saved':'' ?>">
-        <div class="well">
+        <div class="<?php if ('login' !== $_stepId) : ?>well<?php endif ?>">
             <div class="step-title">
-                <h2><a class="pull-right" href="#"><?php echo $this->__('Edit') ?></a><?php echo $_stepInfo['label'] ?></h2>
+                <a class="pull-right" href="#"><span class="icon-edit"></span> <?php echo $this->__('Edit') ?></a>
+                <h3><?php echo $_stepInfo['label'] ?></h3>
             </div>
             <div id="checkout-step-<?php echo $_stepId ?>" class="step a-item" style="display:none;">
                 <?php echo $this->getChildHtml($_stepId) ?>

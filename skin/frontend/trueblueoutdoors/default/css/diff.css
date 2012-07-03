@@ -24,9 +24,7 @@
 	margin-left: 10px;
 	margin-top: 5px;
 }
-.toolbar .the-icons {
-    vertical-align: middle;
-}
+
 .pagination {
 	margin: 0px !important;
 }
@@ -35,10 +33,7 @@
 }
 .add-to-links { margin: 5px 0 0 0;}
 .old-price { text-decoration: line-through;}
-.price{
-	font-weight: bold;
-	color: #DA4F49;
-}
+
 #wishlistCarousel .price {
 	color: #FFF;
 }
@@ -110,9 +105,7 @@ body{
 .modal{
     text-align: center;
 }
-header {
-    padding-bottom: 5px;
-}
+
 .hero-unit {
     padding: 30px;
     background-color: #f5f5f5;

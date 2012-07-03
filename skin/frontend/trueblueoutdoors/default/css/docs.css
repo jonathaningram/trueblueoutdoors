@@ -533,15 +533,6 @@ form.well {
   margin-bottom: 9px;
 }
 
-/* Icons
-------------------------- */
-.the-icons {
-  margin-left: 0;
-  list-style: none;
-}
-.the-icons i:hover {
-  background-color: rgba(255,0,0,.25);
-}
 
 /* Eaxmples page
 ------------------------- */

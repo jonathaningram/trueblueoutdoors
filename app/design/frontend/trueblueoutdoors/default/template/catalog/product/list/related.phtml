@@ -12,7 +12,7 @@
 <?php if($this->getItems()->getSize()): ?>
 <div class="block block-related well">
     <div class="block-title">
-        <strong><span><?php echo $this->__('Related Products') ?></span></strong>
+        <strong><span><?php echo $this->__('Related products') ?></span></strong>
     </div>
     <div class="block-content">
         <p class="block-subtitle"><?php echo $this->__('Check items to add to the cart or') ?>&nbsp;<br /><a href="#" onclick="selectAllRelated(this); return false;"><?php echo $this->__('select all') ?></a></p>
@@ -31,12 +31,10 @@
                             <?php endif; ?>
                         <?php endif; ?>
                                                         <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="pull-right" title="<?php echo $this->__('Add to Wishlist') ?>" rel="tooltip"><span class="icon-check"></span></a>
+                            <a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="pull-right" title="<?php echo $this->__('Add to wishlist') ?>" rel="tooltip"><span class="icon-check"></span></a>
                         <?php endif; ?>
                         <?php echo $this->getPriceHtml($_item, true, '-related') ?>
                         <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
-                        
-
                     </label>
                     </div>
                 </div>

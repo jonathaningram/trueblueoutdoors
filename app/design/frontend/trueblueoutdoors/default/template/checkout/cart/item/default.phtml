@@ -17,13 +17,13 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 <tr>
     <td><?php if ($this->hasProductUrl()):?><a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getProductName()) ?>" class="product-image"><?php endif;?><img src="<?php echo $this->getProductThumbnail()->resize(125); ?>" width="125" height="125" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /><?php if ($this->hasProductUrl()):?></a><?php endif;?></td>
     <td>
-        <h3 class="product-name">
+        <div>
         <?php if ($this->hasProductUrl()):?>
             <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->htmlEscape($this->getProductName()) ?></a>
         <?php else: ?>
             <?php echo $this->htmlEscape($this->getProductName()) ?>
         <?php endif; ?>
-        </h3>
+        </div>
         <?php if ($_options = $this->getOptionList()):?>
         <dl class="item-options">
             <?php foreach ($_options as $_option) : ?>
@@ -53,13 +53,13 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     </td>
     <td class="a-center">
         <?php if ($isVisibleProduct): ?>
-        <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><span class="icon-edit"></span><?php echo $this->__('Edit') ?></a>
+        <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo $this->__('Edit item parameters') ?>"><span class="icon-edit"></span> <?php echo $this->__('Edit') ?></a>
         <?php endif ?>
     </td>
     <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
     <td class="a-center">
         <?php if ($isVisibleProduct): ?>
-        <input type="checkbox" value="1" name="cart[<?php echo $_item->getId() ?>][wishlist]" title="<?php echo $this->__('Move to Wishlist') ?>" class="checkbox" />
+        <input type="checkbox" value="1" name="cart[<?php echo $_item->getId() ?>][wishlist]" title="<?php echo $this->__('Move to wishlist') ?>" class="checkbox" />
         <?php endif ?>
     </td>
     <?php endif ?>
@@ -163,7 +163,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php endif; ?>
     <?php endif; ?>
     <td class="a-center">
-        <input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="span1" maxlength="12" />
+        <input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="span1" maxlength="12" type="number"/>
     </td>
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-right">
@@ -258,5 +258,5 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
         <?php endif; ?>
     </td>
     <?php endif; ?>
-    <td class="a-center"><a href="<?php echo $this->getDeleteUrl()?>" title="<?php echo $this->__('Remove item')?>" class="btn-remove btn-remove2"><span class="icon-trash"></span><?php echo $this->__('Remove item')?></a></td>
+    <td class="a-center"><a href="<?php echo $this->getDeleteUrl()?>" title="<?php echo $this->__('Remove item')?>" class="btn-remove btn-remove2"><span class="icon-trash"></span> <?php echo $this->__('Remove item')?></a></td>
 </tr>

@@ -20,15 +20,14 @@
     <div class="row">
         <div class="span12">
             <div class="page-title title-buttons">
-                                <?php if(!$this->hasError()): ?>
-                <?php foreach ($this->getMethods('top_methods') as $method): ?>
-                    <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                    <?php echo $methodHtml; ?>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                <?php if(!$this->hasError()): ?>
+                    <?php foreach ($this->getMethods('top_methods') as $method): ?>
+                        <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                        <?php echo $methodHtml; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
-                <h1><?php echo $this->__('Shopping Cart') ?></h1>
-
+                <h1><?php echo $this->__('Shopping cart') ?></h1>
             </div>
         </div>    
     </div>
@@ -42,12 +41,12 @@
                 <thead>
                     <tr>
                         <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
-                        <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
+                        <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product name') ?></span></th>
                         <th rowspan="<?php echo $mergedCells; ?>"></th>
                         <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
+                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to wishlist') ?></span></th>
                         <?php endif ?>
-                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
+                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit price') ?></span></th>
                         <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
                         <th class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
                         <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
@@ -61,22 +60,16 @@
                     </tr>
                     <?php endif; ?>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <td colspan="50" class="a-right">
-                            <?php if($this->getContinueShoppingUrl()): ?>
-                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="btn" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
-                            <?php endif; ?>
-                            <button type="submit" title="<?php echo $this->__('Update Shopping Cart') ?>" class="btn pull-right"><span><span><?php echo $this->__('Update Shopping Cart') ?></span></span></button>
-                        </td>
-                    </tr>
-                </tfoot>
                 <tbody>
                 <?php foreach($this->getItems() as $_item): ?>
                     <?php echo $this->getItemHtml($_item) ?>
                 <?php endforeach ?>
                 </tbody>
             </table>
+            <?php if($this->getContinueShoppingUrl()): ?>
+                <a title="<?php echo $this->__('Continue shopping') ?>" class="btn" href="<?php echo $this->getContinueShoppingUrl() ?>"><?php echo $this->__('Continue shopping') ?></a>
+            <?php endif; ?>
+            <button type="submit" title="<?php echo $this->__('Update shopping cart') ?>" class="btn pull-right"><?php echo $this->__('Update shopping cart') ?></button>
         </fieldset>
     </form>
     <div class="container">
@@ -90,17 +83,19 @@
                     <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
                 </div>
             </div>
-            <div class="span6"><div class="hero-unit">
-                <?php echo $this->getChildHtml('totals'); ?>
-                <?php if(!$this->hasError()): ?>
-                <?php foreach ($this->getMethods('methods') as $method): ?>
-                    <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                    <?php echo $methodHtml; ?>
+            <div class="span6">
+                <div class="hero-unit">
+                    <?php echo $this->getChildHtml('totals'); ?>
+                    <div class="form-actions">
+                    <?php if(!$this->hasError()): ?>
+                        <?php foreach ($this->getMethods('methods') as $method): ?>
+                            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                            <?php echo $methodHtml; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     <?php endif; ?>
-                <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-            
+                    </div>
+                </div>
                 <?php echo $this->getChildHtml('crosssell') ?>
             </div>
         </div>

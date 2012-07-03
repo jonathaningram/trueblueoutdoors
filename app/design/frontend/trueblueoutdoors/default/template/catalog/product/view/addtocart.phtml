@@ -10,14 +10,14 @@
  */
 ?>
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php $buttonTitle = $this->__('Add to cart'); ?>
 <?php if($_product->isSaleable()): ?>
-    <div class="form-inline">
+    <div class="add-to-cart form-inline form-actions">
         <?php if(!$_product->isGrouped()): ?>
-        <label for="qty"><strong><?php echo $this->__('Qty:') ?></strong></label>
-        <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="span1 input-text qty" />
+        <label for="qty" class="control-label"><?php echo $this->__('Qty:') ?></label>
+        <input type="number" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="qty input-small" />
         <?php endif; ?>
-        <button type="button" title="<?php echo $buttonTitle ?>" class="btn btn-primary" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+        <button type="button" title="<?php echo $buttonTitle ?>" class="btn btn-warning" onclick="productAddToCartForm.submit(this)"><?php echo $buttonTitle ?></button>
         <?php echo $this->getChildHtml('', true, true) ?>
     </div>
 <?php endif; ?>

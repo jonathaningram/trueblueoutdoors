@@ -1,3 +1,11 @@
+a {
+    color: #77461C;
+}
+
+a:hover {
+    color: #000;
+}
+
 .navbar .brand {
     padding-top: 0;
     padding-bottom: 0;
@@ -16,8 +24,39 @@
     line-height: 35px;
 }
 
+header {
+    padding-bottom: 10px;
+}
+
 .sidebar-nav {
     padding: 8px 0;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+    background-color: #FAA732;
+}
+
+.nav-list > li > a:hover {
+    color: #000;
+}
+
+.nav > li > a:hover {
+    color: #000;
+}
+
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+    color: #ffffff;
+    background-color: #FAA732;
+}
+
+.nav-tabs .dropdown-toggle .caret,
+.nav-pills .dropdown-toggle .caret {
+    margin-top: 6px;
+    border-top-color: #77461C;
+    border-bottom-color: #77461C;
 }
 
 /* Just alias page-header */
@@ -28,6 +67,12 @@
     border-bottom: 1px solid #EEE;
 }
 
+form label.required:after {
+    content: '*';
+    color: #B94A48;
+    margin-left: 5px;
+}
+
 .validation-advice {
     clear: both;
     margin: 5px 0 0;
@@ -36,4 +81,32 @@
 
 .validation-advice:before {
     content: "* ";
+}
+
+.discount-coupon-form > fieldset > div {
+    padding-top: 15px;
+}
+
+.opc .step-title {
+    margin-bottom: 10px;
+}
+
+.opc .form-actions span {
+    margin-left: 10px;
+}
+
+.opc .order-review table {
+    background-color: #FFF;
+}
+
+.payment-form-ccsave {
+    margin-top: 15px;
+}
+
+.carousel-inner a {
+    color: #FFF;
+}
+
+.price-box .price {
+    font-weight: bold;
 }
