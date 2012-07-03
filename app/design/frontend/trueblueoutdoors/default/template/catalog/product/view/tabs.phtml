@@ -19,25 +19,29 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     base_default
+ * @package     default_modern
  * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ */
 ?>
-
-<?php $_product = $this->getProduct(); ?>
-<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
-    <?php if ($this->helper('wishlist')->isAllow()) : ?>
-        <p>
-            <a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, '<?php echo $_wishlistSubmitUrl ?>'); return false;" class="link-wishlist"><span class="icon-heart"></span> <?php echo $this->__('Add to wishlist') ?></a>
-        </p>
-    <?php endif; ?>
-    <?php
-    $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);
-    ?>
-    <?php if ($_compareUrl) : ?>
-        <p>
-            <a href="<?php echo $_compareUrl ?>" class="link-compare"><span class="icon-list"></span> <?php echo $this->__('Add to compare') ?></a>
-        </p>
-    <?php endif; ?>
+<ul class="nav nav-tabs">
+    <?php foreach ($this->getTabs() as $_index => $_tab): ?>
+        <?php if ($this->getChildHtml($_tab['alias'])): ?>
+            <li class="<?php echo!$_index ? 'active' : '' ?>"><a data-toggle="tab" href="#product_tabs_<?php echo str_replace('.', '_', $_tab['alias']) ?>"><?php echo $_tab['title'] ?></a></li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</ul>
+<div class="tab-content">
+    <?php foreach ($this->getTabs() as $_index => $_tab): ?>
+        <?php if ($this->getChildHtml($_tab['alias'])): ?>
+            <div class="tab-pane fade <?php echo!$_index ? ' in active' : '' ?>" id="product_tabs_<?php echo str_replace('.', '_', $_tab['alias']) ?>">
+                <?php echo $this->getChildHtml($_tab['alias']) ?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
 </div>

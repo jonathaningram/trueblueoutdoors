@@ -1,33 +1,45 @@
 <?php
 /**
- * Magento responsive theme
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     bootstrapped_default
- * @copyright   Copyright (c) 2012 Magenthon (http://magenthon.com)
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- * @author      Vedran Subotic <vedran@magenthon.com>
  */
 ?>
 <div class="box-collateral box-tags">
-    <h2><?php echo $this->__('Product Tags') ?></h2>
     <?php echo $this->getChildHtml('list_before')?>
     <?php if( $this->getCount() ): ?>
-    <h3><?php echo $this->__('Other people marked this product with these tags:') ?></h3>
+    <p><?php echo $this->__('Other people marked this product with these tags:') ?></p>
     <ul id="<?php echo $this->getUniqueHtmlId('product-tags_'); ?>" class="product-tags">
-        <?php echo $this->renderTags('<li><a href="%1$s">%2$s</a> (%3$s)</li>') ?>
+        <?php echo $this->renderTags('<li><a href="%1$s"><span class="label">%2$s (%3$s)</span></a></li>') ?>
     </ul>
     <?php endif; ?>
-    <form id="addTagForm" action="<?php echo $this->getFormAction(); ?>" method="get" class="form-inline well">
-            <label for="productTagName"><?php echo $this->__('Add Your Tags:') ?></label>
-                <input type="text" class="input-text required-entry" name="productTagName" id="productTagName" />
-            <button type="button" title="<?php echo $this->__('Add Tags') ?>" class="btn" onclick="submitTagForm()">
-                <span>
-                    <span><?php echo $this->__('Add Tags') ?></span>
-                </span>
-            </button>
+    <form id="addTagForm" action="<?php echo $this->getFormAction(); ?>" method="get" class="form-inline">
+        <label for="productTagName"><?php echo $this->__('Add your tags') ?></label>
+        <input type="text" class="required-entry" name="productTagName" id="productTagName" />
+        <button type="btn" title="<?php echo $this->__('Add tags') ?>" class="btn btn-warning" onclick="submitTagForm()">
+            <?php echo $this->__('Add tags') ?>
+        </button>
     </form>
-    <p class="note"><?php echo $this->__("Use spaces to separate tags. Use single quotes (') for phrases.") ?></p>
+    <p class="help-block"><?php echo $this->__("Use spaces to separate tags. Use single quotes (') for phrases.") ?></p>
     <script type="text/javascript">
     //<![CDATA[
         var addTagFormJs = new VarienForm('addTagForm');
