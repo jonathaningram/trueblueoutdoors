@@ -71,6 +71,7 @@
             <block type="core/template" name="contactForm" template="contacts/form.phtml"/>
         </reference>
         <reference name="left">
+            <block type="contacts/details" name="contacts_details" as="contacts_details" template="contacts/details.phtml"/>
             <block type="core/template" before="cart_sidebar" name="contacts.sidebar" template="contacts/sidebar.phtml"/>
             <action method="unsetChild"><name>catalog.compare.sidebar</name></action>
             <action method="unsetChild"><name>tags_popular</name></action>
