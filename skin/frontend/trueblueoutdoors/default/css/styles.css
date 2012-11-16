@@ -59,6 +59,13 @@ header {
     border-bottom-color: #77461C;
 }
 
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #FAA732;
+}
+
 /* Just alias page-header */
 
 .page-title {

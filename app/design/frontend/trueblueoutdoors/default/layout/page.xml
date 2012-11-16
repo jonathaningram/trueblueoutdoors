@@ -82,6 +82,9 @@
                     <stylesheet>css/styles.css</stylesheet>
                 </action>
                 <action method="addCss">
+                    <stylesheet>css/styles-responsive.css</stylesheet>
+                </action>
+                <action method="addCss">
                     <stylesheet>css/docs.css</stylesheet>
                 </action>
                 <action method="addCss">
